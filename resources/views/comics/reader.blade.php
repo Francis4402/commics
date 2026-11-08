@@ -588,20 +588,6 @@
                 }
             }
         }
-            const wrapper = button.closest('.comic-page-wrapper');
-            if (!wrapper) return;
-            const img = wrapper.querySelector('img');
-            const errorCard = wrapper.querySelector('.image-error-card');
-            if (img && errorCard) {
-                errorCard.classList.add('hidden');
-                img.style.display = '';
-                if (img.src === img.dataset.proxySrc) {
-                    img.src = img.dataset.originalSrc;
-                } else {
-                    img.src = img.dataset.proxySrc;
-                }
-            }
-        }
     </script>
 </body>
 </html>

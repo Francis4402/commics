@@ -248,6 +248,12 @@ class ComicScraperTest extends TestCase
         $response->assertSee('#1 - Chapter 1');
         $response->assertSee('#2 - Chapter 2');
         $response->assertSee('#3 - Chapter 3');
+
+        // Check reader mode toggle buttons (Scroll and Paged)
+        $response->assertSee('id="modeScrollBtn"', false);
+        $response->assertSee('id="modeSingleBtn"', false);
+        $response->assertSee('id="singleView"', false);
+        $response->assertSee('setReadingMode(\'single\')', false);
     }
 
     public function test_front_page_pagination_slices_items_and_renders_page_links()
